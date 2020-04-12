@@ -42,6 +42,8 @@ module StripeMock
         end
 
         params[:collection_method] = options[:collection_method] || 'charge_automatically'
+        params[:cancel_at] = options[:cancel_at] || nil
+        params[:pause_collection] = options[:pause_collection] || {}
 
         # TODO: Implement coupon logic
 
