@@ -41,6 +41,10 @@ module StripeMock
           params.merge!(cancel_at_period_end: false, canceled_at: nil)
         end
 
+        params[:collection_method] = options[:collection_method] || 'charge_automatically'
+        params[:cancel_at] = options[:cancel_at] || nil
+        params[:pause_collection] = options[:pause_collection] || {}
+
         # TODO: Implement coupon logic
 
         if (((plan && plan[:trial_period_days]) || 0) == 0 && options[:trial_end].nil?) || options[:trial_end] == "now"
